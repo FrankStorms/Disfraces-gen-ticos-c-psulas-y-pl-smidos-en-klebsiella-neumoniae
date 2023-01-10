@@ -1,0 +1,54 @@
+---
+title: "Plasmidos proyecto final"
+author: "Pedro, Frank y Samuel"
+date: "2023-01-10"
+output: html_document
+---
+
+# Disfraces genéticos: cápsulas y plásmidos en klebsiella neumoniae
+
+#### Descripción del problema:
+
+Modelar la adquisición de capsulas mediantes plasmidos con comportamiento parasitico en klebsiella como un posible mecanismo contra fagos.
+
+Modelo matemático de fagos y capsulas (Suceptible a ajustes)
+
+$$
+\begin{aligned}
+\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2+ \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho \\
+\dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 \\
+\dot{d3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2
+\end{aligned}
+$$
+
+Codigo
+
+```{r}
+library(deSolve)
+CAPsulas <- function(t, state, parameters) {
+  with(as.list(c(state, parameters)), {
+    
+    # Acá van definidas las ecuaciones
+    
+    d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 - delta1*rho
+    d2 <- (1-delta)*alpha*C*rho1 + gama*rho*rho1 - rhoe*(1-delta)*alpha*C*rho1 - delta1*rho1
+    d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2
+  
+    list(c(d1, d2, d3))
+  })
+}
+
+pars <- c(alpha= 0.22 , gama = 0.2 , S= .2, rhoe = .21, delta = .3 , 
+          delta1 = .31, C = 10, sigam =.3)  
+condiciones_iniciales <- c(rho =100, rho1= 100 , rho2= 100)
+tiempo <- seq(0, 20, by = 0.001)
+out <- ode(condiciones_iniciales, tiempo, SIRC, pars) 
+```
+
+Grafica... aún falta ajustar los parametros al modelo pero ya responde
+
+```{r}
+matplot(out[ , 1], out[ , 2:3], type = "l", xlab = "tiempo", ylab = "Población",
+        main = "poblaciones con capsulas", lwd = 2)
+legend("topright", c("Sin capsula", "Capsula 1", "Cpasula 2"), col = 1:3,lty=1:3,cex=0.5)
+```
