@@ -7,27 +7,23 @@ output: html_document
 
 
 
-# Disfraces genéticos: cápsulas y plásmidos en klebsiella neumoniae
+# La Interacción Cápsula-Plásmido
+# Disfraces Genéticos: Cápsulas-Plásmidos.
 
-Plásmidos vs Plásmidos
-
-Los plásmidos son elementos genéticos autónomos que utilizan la maquinaria de replicación de las bacterias para poder replicarse. Estos elementos varían en tamaño y contenido, ya que pueden codificar o no genes importantes, así tener una longitud grande o chica.
+¿Qué son los plásmidos?
+Los plásmidos son material genético autónomo de tamaño variable que aprovechan la maquinaria de replicación de un hospedero (bacterias y/o arqueas) para replicarse  y que se transfieren de forma horizontal entre células (Attéré et al., 2017). 
 
 ¿Cómo se adquieren los plásmidos?
-Pueden ser obtenidos a través de 2 formas:
+De acuerdo con Boto en 2019, pueden ser adquiridos a través de 2 vías:
 Conjugación: Donde existe un intercambio directo de plásmidos entre células. 
-Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células. 
+Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células.
 
-Los plásmidos juegan un papel importante en la diseminación de genes de resistencia a antibióticos debido a que se transfieren de forma horizontal entre bacterias y arqueas. Se estima que más del 80% de los genes de resistencia a antibióticos de Salmonella enterica se encuentran contenidos en plásmidos. Es importante mencionar que los plásmidos influyen de forma sútil en la evolución de genes, esto sucede gracias a que se vinculan físicamente con éstos promoviendo una co-selección, aumentando la persistencia de ciertos genes.
+Los plásmidos juegan un papel muy importante dentro de la diseminación de genes de resistencia, ya que se transmiten de forma horizontal entre arqueas y bacterias. Se estima que el 80% de los genes de resistencia a antibióticos que posee Salmonella enterica pertenecen a plásmidos (McMillan et al., 2019). 
 
-A pesar de su relevancia en distintos ámbitos, aún se desconoce el motivo por el cual han estado libremente en el ambiente por tanto tiempo sin formar o unirse a un cromosoma. Es de gran sorpresa ya que este estado implica un costo energético alto. Tampoco se sabe con certeza el porqué dentro de una sola especie pueden existir miles de plásmidos, y porqué en algunas cepas hay más plásmidos que en otras.  
+Otra característica otorgada por los plásmidos son las cápsulas bacterianas, estructuras que protegen a las células de ambientes y situaciones hostiles, como la infección por bacteriófagos, la desecación o la exposición  ambientes tóxicos (Moxon & Kroll, 1990; Lopez et al., 2021).
 
-Existen 2 mecanismos que buscan explicar ese estado: 
-Selección positiva: los plásmidos son beneficiosos, las células con plásmidos superan a las sin plásmido.
-Transferencia infecciosa: los plásmidos costosos se mantienen si se propagan de forma rápida para compensar el crecimiento del reducido huésped. 
+La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula al estar en presencia de fagos pierden la cápsula para evitar ser depredados, ya que éstos se ven atraídos por los plásmidos. A partir de este descubrimiento, se propuso la hipótesis que señala que las células pueden perder y volver a adquirir las cápsulas a través de la entrada y salida de los plásmidos de la célula para evitar ser depredados (Lopez et al., 2021). 
 
-¿Plásmidos parasíticos?
-Anteriormente se creía que la transferencia infecciosa era algo muy poco probable, y la selección positiva se tomaba como el mecanismo por el cuál los plásmidos podían conservarse. No fue hasta hace poco, que se descubrió nueva evidencia que demostraba que es posible que los plásmidos puedan propagarse de forma rápida y así conservarse por tanto tiempo. 
 
 #### Descripción del problema:
 
@@ -74,3 +70,20 @@ matplot(out[ , 1], out[ , 2:3], type = "l", xlab = "tiempo", ylab = "Población"
         main = "poblaciones con capsulas", lwd = 2)
 legend("topright", c("Sin capsula", "Capsula 1", "Cpasula 2"), col = 1:3,lty=1:3,cex=0.5)
 ```
+
+Resultados
+
+
+Discusión
+1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias.
+2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 
+3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente".
+4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 
+5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula.
+6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
+
+
+Conclusión 
+
+
+Referencias
