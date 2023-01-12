@@ -9,6 +9,26 @@ output: html_document
 
 # Disfraces genéticos: cápsulas y plásmidos en klebsiella neumoniae
 
+Plásmidos vs Plásmidos
+
+Los plásmidos son elementos genéticos autónomos que utilizan la maquinaria de replicación de las bacterias para poder replicarse. Estos elementos varían en tamaño y contenido, ya que pueden codificar o no genes importantes, así tener una longitud grande o chica.
+
+¿Cómo se adquieren los plásmidos?
+Pueden ser obtenidos a través de 2 formas:
+Conjugación: Donde existe un intercambio directo de plásmidos entre células. 
+Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células. 
+
+Los plásmidos juegan un papel importante en la diseminación de genes de resistencia a antibióticos debido a que se transfieren de forma horizontal entre bacterias y arqueas. Se estima que más del 80% de los genes de resistencia a antibióticos de Salmonella enterica se encuentran contenidos en plásmidos. Es importante mencionar que los plásmidos influyen de forma sútil en la evolución de genes, esto sucede gracias a que se vinculan físicamente con éstos promoviendo una co-selección, aumentando la persistencia de ciertos genes.
+
+A pesar de su relevancia en distintos ámbitos, aún se desconoce el motivo por el cual han estado libremente en el ambiente por tanto tiempo sin formar o unirse a un cromosoma. Es de gran sorpresa ya que este estado implica un costo energético alto. Tampoco se sabe con certeza el porqué dentro de una sola especie pueden existir miles de plásmidos, y porqué en algunas cepas hay más plásmidos que en otras.  
+
+Existen 2 mecanismos que buscan explicar ese estado: 
+Selección positiva: los plásmidos son beneficiosos, las células con plásmidos superan a las sin plásmido.
+Transferencia infecciosa: los plásmidos costosos se mantienen si se propagan de forma rápida para compensar el crecimiento del reducido huésped. 
+
+¿Plásmidos parasíticos?
+Anteriormente se creía que la transferencia infecciosa era algo muy poco probable, y la selección positiva se tomaba como el mecanismo por el cuál los plásmidos podían conservarse. No fue hasta hace poco, que se descubrió nueva evidencia que demostraba que es posible que los plásmidos puedan propagarse de forma rápida y así conservarse por tanto tiempo. 
+
 #### Descripción del problema:
 
 Modelar la adquisición de capsulas mediantes plasmidos con comportamiento parasitico en klebsiella como un posible mecanismo contra fagos.
