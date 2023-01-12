@@ -23,6 +23,20 @@ La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula
 
 Modelar la interacción plásmido-cápsula que se da durante los procesos de fagocitosis.
 
+Variables
+d1/rho  : Bacteria sin cápsula
+d2/rho1: Bacteria con cápsula 1
+d2/rho2: Batería con cápsula 2
+
+Parámetros
+alfa: Tasa de Fitness
+C: Límite de nutrientes
+gamma: Tasa de conjugación del plásmido
+rhoe: Tasa de pérdida del plásmido
+delta: Porción de bacterias que al dividirse se quedan sin plásmidos
+delta1: Tasa de muerte natural
+lamda: Tasa de muerte por fagos
+
 Modelo matemático $$
 \begin{aligned}
 \dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2 + \rho e (1-\delta) \alpha C \rho 1 + \rho e ((1-\delta)- \sigma)\alpha C \rho 2 - \delta 1 \rho \\
@@ -65,7 +79,13 @@ legend("topright", c("Sin capsula", "Capsula 1", "Cpasula 2"), col = 1:3,lty=1:3
 
 Resultados
 
-Discusión 1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias. 2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente". 4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula. 6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
+Discusión 
+1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias. 
+2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 
+3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente". 
+4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 
+5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula. 
+6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
 
 Conclusión
 Con este modelo podemos representar con mayor precisión las dinámicas ecológicas entre bacterias, plásmidos y fagos.  Así como arrojarnos más luz en la aplicación clinica, como en el comportamiento de enfermedades bacterias y para la aplicación de fagos como un potencial tratamiento ante la inminente multirresistencia bacteriana.
