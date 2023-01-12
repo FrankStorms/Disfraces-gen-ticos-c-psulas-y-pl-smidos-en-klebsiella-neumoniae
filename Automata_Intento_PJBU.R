@@ -6,7 +6,7 @@ n=25 # Tamaño de la matriz
 mat=matrix(ncol=n,nrow=n,0) # Crear matriz con ceros, que representan las células sin plásmido
 
 mat[5,15]=1 # Colocar célula con plásmido 1 en las coordenadas (5,15)
-mat[9,20]=1 # Colocar célula con plásmido 2 en las coordenadas (9,20)
+mat[9,20]=2 # Colocar célula con plásmido 2 en las coordenadas (9,20)
 image(mat,col=c("grey50","deeppink","seagreen1"),yaxt="n",xaxt="n",zlim=c(0,2)) # Plot image
 grid(nx=n,ny=n,col="grey70",lty=1)
 
@@ -24,7 +24,7 @@ for (k in 1:t){ # Repetir t veces
   for (i in 1:n){
     for (j in 1:n){
       if (mat[i,j]==0) { kSp=kSp+1} # Cuenta los sin plásmido
-      if (mat[i,j]==1) { kp2=p1+1} # Cuenta los plásmido 1 
+      if (mat[i,j]==1) { kp1=kp1+1} # Cuenta los plásmido 1 
       if (mat[i,j]==2) { kp2=kp2+1} # Cuenta los plásmido 2
       R1=0 # Inicia el conteo de números de los vecinos infectados con el plásmido 1
       R2=0 # Inicia el conteo de números de los vecinos infectados con el plásmido 2
