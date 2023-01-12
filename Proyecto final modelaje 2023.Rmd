@@ -5,6 +5,8 @@ date: "2023-01-10"
 output: html_document
 ---
 
+
+
 # Disfraces genéticos: cápsulas y plásmidos en klebsiella neumoniae
 
 #### Descripción del problema:
