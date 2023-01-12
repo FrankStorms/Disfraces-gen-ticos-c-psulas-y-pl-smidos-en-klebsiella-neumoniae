@@ -25,7 +25,7 @@ Modelar la interacción plásmido-cápsula que se da durante los procesos de fag
 
 Modelo matemático $$
 \begin{aligned}
-\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2+ \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho \\
+\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2 + \rho e (1-\delta) \alpha C \rho 1 + \rho e ((1-\delta)- \sigma)\alpha C \rho 2 - \delta 1 \rho \\
 \dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 -  \lamda  \rho1\\ 
 \dot{d3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2 -  \lamda  \rho2
 \end{aligned}
@@ -40,7 +40,7 @@ CAPsulas <- function(t, state, parameters) {
     
     # Acá van definidas las ecuaciones
     
-    d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 - delta1*rho
+    d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 +  rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho
     d2 <- (1-delta)*alpha*C*rho1 + gama*rho*rho1 - rhoe*(1-delta)*alpha*C*rho1 - delta1*rho1 - lamda*rho1
     d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2 - lamda*rho2
   
