@@ -40,14 +40,14 @@ for (k in 1:t){
         if (N==0) { N=n}
         if (S==n+1) { S=1}
         
-        if(mat[E,j]==1){R=R+1} # East
-        if(mat[W,j]==1){R=R+1} # West
-        if(mat[i,N]==1){R=R+1} # North
-        if(mat[i,S]==1){R=R+1} # South
-        if(mat[E,N]==1){R=R+1} # North East
-        if(mat[E,S]==1){R=R+1} # South East
-        if(mat[W,N]==1){R=R+1} # North West
-        if(mat[W,S]==1){R=R+1} # South West
+        if(mat[E,j]==1){R=R+1} # Este
+        if(mat[W,j]==1){R=R+1} # Oeste
+        if(mat[i,N]==1){R=R+1} # Norte
+        if(mat[i,S]==1){R=R+1} # Sur
+        if(mat[E,N]==1){R=R+1} # Nor Este
+        if(mat[E,S]==1){R=R+1} # Sur Este
+        if(mat[W,N]==1){R=R+1} # Nor Oeste
+        if(mat[W,S]==1){R=R+1} # Sur Oeste
       }
       a=-1.5
       b=0.6
@@ -68,14 +68,14 @@ for (k in 1:t){
         if (N==0) { N=n}
         if (S==n+1) { S=1}
         
-        if(mat[E,j]==2){R1=R1+1} # East
-        if(mat[W,j]==2){R1=R1+1} # West
-        if(mat[i,N]==2){R1=R1+1} # North
-        if(mat[i,S]==2){R1=R1+1} # South
-        if(mat[E,N]==2){R1=R1+1} # North East
-        if(mat[E,S]==2){R1=R1+1} # South East
-        if(mat[W,N]==2){R1=R1+1} # North West
-        if(mat[W,S]==2){R1=R1+1} # South West
+        if(mat[E,j]==2){R1=R1+1} # Este
+        if(mat[W,j]==2){R1=R1+1} # Oeste
+        if(mat[i,N]==2){R1=R1+1} # Norte
+        if(mat[i,S]==2){R1=R1+1} # Sur
+        if(mat[E,N]==2){R1=R1+1} # Nor Este
+        if(mat[E,S]==2){R1=R1+1} # Sur Este
+        if(mat[W,N]==2){R1=R1+1} # Nor Oeste
+        if(mat[W,S]==2){R1=R1+1} # Sur Este
       }
       a1<- -1.5
       b1<- 0.9
@@ -96,14 +96,14 @@ for (k in 1:t){
         if (N==0) { N=n}
         if (S==n+1) { S=1}
        
-        if(mat[E,j]==1){R=R+1} # East
-        if(mat[W,j]==1){R=R+1} # West
-        if(mat[i,N]==1){R=R+1} # North
-        if(mat[i,S]==1){R=R+1} # South
-        if(mat[E,N]==1){R=R+1} # North East
-        if(mat[E,S]==1){R=R+1} # South East
-        if(mat[W,N]==1){R=R+1} # North West
-        if(mat[W,S]==1){R=R+1} # South West
+        if(mat[E,j]==1){R=R+1} # Este
+        if(mat[W,j]==1){R=R+1} # Oeste
+        if(mat[i,N]==1){R=R+1} # Norte
+        if(mat[i,S]==1){R=R+1} # Sur
+        if(mat[E,N]==1){R=R+1} # Nor Este
+        if(mat[E,S]==1){R=R+1} # Sur Este
+        if(mat[W,N]==1){R=R+1} # Nor Oeste
+        if(mat[W,S]==1){R=R+1} # Sur Oeste
       }
       a=-1.5
       b=0.6
@@ -124,14 +124,14 @@ for (k in 1:t){
         if (N==0) { N=n}
         if (S==n+1) { S=1}
        
-        if(mat[E,j]==2){R1=R1+1} # East
-        if(mat[W,j]==2){R1=R1+1} # West
-        if(mat[i,N]==2){R1=R1+1} # North
-        if(mat[i,S]==2){R1=R1+1} # South
-        if(mat[E,N]==2){R1=R1+1} # North East
-        if(mat[E,S]==2){R1=R1+1} # South East
-        if(mat[W,N]==2){R1=R1+1} # North West
-        if(mat[W,S]==2){R1=R1+1} # South West
+        if(mat[E,j]==2){R1=R1+1} # Este
+        if(mat[W,j]==2){R1=R1+1} # Oeste
+        if(mat[i,N]==2){R1=R1+1} # Norte
+        if(mat[i,S]==2){R1=R1+1} # Sur
+        if(mat[E,N]==2){R1=R1+1} # Nor Este
+        if(mat[E,S]==2){R1=R1+1} # Sur Este
+        if(mat[W,N]==2){R1=R1+1} # Nor Oeste
+        if(mat[W,S]==2){R1=R1+1} # Sur Oeste
       }
       a1<- -1.5
       b1<- 0.9
