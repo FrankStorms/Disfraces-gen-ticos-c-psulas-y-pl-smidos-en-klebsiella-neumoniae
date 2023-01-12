@@ -9,9 +9,11 @@ output: html_document
 
 # Disfraces Genéticos: Cápsulas-Plásmidos.
 
-¿Qué son los plásmidos? Los plásmidos son material genético autónomo de tamaño variable que aprovechan la maquinaria de replicación de un hospedero (bacterias y/o arqueas) para replicarse y que se transfieren de forma horizontal entre células (Attéré et al., 2017).
+¿Qué son los plásmidos? 
+Los plásmidos son material genético autónomo de tamaño variable que aprovechan la maquinaria de replicación de un hospedero (bacterias y/o arqueas) para replicarse y que se transfieren de forma horizontal entre células (Attéré et al., 2017).
 
-¿Cómo se adquieren los plásmidos? De acuerdo con Boto en 2019, pueden ser adquiridos a través de 2 vías: Conjugación: Donde existe un intercambio directo de plásmidos entre células. Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células.
+¿Cómo se adquieren los plásmidos? 
+De acuerdo con Boto en 2019, pueden ser adquiridos a través de 2 vías: Conjugación: Donde existe un intercambio directo de plásmidos entre células. Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células.
 
 Los plásmidos juegan un papel muy importante dentro de la diseminación de genes de resistencia, ya que se transmiten de forma horizontal entre arqueas y bacterias. Se estima que el 80% de los genes de resistencia a antibióticos que posee Salmonella enterica pertenecen a plásmidos (McMillan et al., 2019).
 
@@ -23,15 +25,25 @@ La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula
 
 Modelar la interacción plásmido-cápsula que se da durante los procesos de fagocitosis.
 
-Variables d1/rho : Bacteria sin cápsula d2/rho1: Bacteria con cápsula 1 d2/rho2: Batería con cápsula 2
+Variables 
+rho : Bacteria sin cápsula 
+rho1: Bacteria con cápsula 1 
+rho2: Batería con cápsula 2
 
-Parámetros alfa: Tasa de Fitness C: Límite de nutrientes gamma: Tasa de conjugación del plásmido rhoe: Tasa de pérdida del plásmido delta: Porción de bacterias que al dividirse se quedan sin plásmidos delta1: Tasa de muerte natural lamda: Tasa de muerte por fagos
+Parámetros 
+alfa: Tasa de Fitness 
+C: Límite de nutrientes 
+gamma: Tasa de conjugación del plásmido 
+rho e: Tasa de pérdida del plásmido 
+delta: Porción de bacterias que al dividirse se quedan sin plásmidos 
+delta1: Tasa de muerte natural 
+lambda: Tasa de muerte por fagos
 
 Modelo matemático $$
 \begin{aligned}
-\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2 + \rho e (1-\delta) \alpha C \rho 1 + \rho e ((1-\delta)- \sigma)\alpha C \rho 2 - \delta 1 \rho \\
-\dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 -  \lambda  \rho1\\ 
-\dot{d3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2 -  \lambda  \rho2
+\dot{rho} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2 + \rho e (1-\delta) \alpha C \rho 1 + \rho e ((1-\delta)- \sigma)\alpha C \rho 2 - \delta 1 \rho \\
+\dot{rho2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 -  \lambda  \rho1\\ 
+\dot{rho3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2 -  \lambda  \rho2
 \end{aligned}
 $$
 
@@ -71,6 +83,12 @@ Resultados
 
 Discusión 1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias. 2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente". 4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula. 6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
 
-Conclusión Con este modelo podemos representar con mayor precisión las dinámicas ecológicas entre bacterias, plásmidos y fagos. Así como arrojarnos más luz en la aplicación clinica, como en el comportamiento de enfermedades bacterias y para la aplicación de fagos como un potencial tratamiento ante la inminente multirresistencia bacteriana.
+Conclusión
+Con este modelo es posible representar con mayor precisión las dinámicas ecológicas entre bacterias, plásmidos y fagos; esperamos que el modelo y automatas presentados en éste trabajo sean de ayuda en el área de la salud, donde los estudios para la utilización de bacteriófagos como terapia contra bacterias multirresistentes aumentan cada día por el costo-beneficio que ofrecen.  
 
-Referencias Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211. Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba. Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852. McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832. Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65--85. Sousa J. A. M., Buffet A., Haudiquet M., Rocha E. P. C., Rendueles O. (2020). Modular prophage interactions driven by capsule serotype select for capsule loss under phage predation. ISME J. 14(12): 2980--2996
+Referencias Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211. Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba. Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852. McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832. Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65--85. Sousa J. A. M., Buffet A., Haudiquet M., Rocha E. P. C., Rendueles O. (2020). Modular prophage interactions driven by capsule serotype select for capsule loss under phage predation. ISME J. 14(12): 2980--2996. TileStats(2022). R code for CA recuperado de https://www.tilestats.com/r-code-for-ca/
+RStudio Team (2022). RStudio: Integrated Development Environment for R.
+  RStudio, PBC, Boston, MA URL http://www.rstudio.com/.
+Soetaert K, Petzoldt T, Setzer RW (2010). “Solving Differential Equations in
+R: Package deSolve.” _Journal of Statistical Software_, *33*(9), 1-25.
+doi:10.18637/jss.v033.i09 <https://doi.org/10.18637/jss.v033.i09>.
