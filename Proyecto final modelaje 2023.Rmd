@@ -42,7 +42,7 @@ CAPsulas <- function(t, state, parameters) {
     
     d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 - delta1*rho
     d2 <- (1-delta)*alpha*C*rho1 + gama*rho*rho1 - rhoe*(1-delta)*alpha*C*rho1 - delta1*rho1 - lamda*rho1
-    d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2 - lamnda*rho2
+    d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2 - lamda*rho2
   
     list(c(d1, d2, d3))
   })
