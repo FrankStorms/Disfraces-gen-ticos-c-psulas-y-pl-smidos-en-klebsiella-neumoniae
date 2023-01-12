@@ -235,8 +235,8 @@ for (k in 1:t){ # Repetir t veces
   }
   image(mat,col=c("grey50","deeppink","seagreen1", "black"),add=F,,zlim=c(0,3)) # Plot image
   grid(nx=n,ny=n,col="grey70",lty=1)
-  Sys.sleep(0.1) # To see movement on screen we need to pause the loop
-  mat=temp # Overwrite matrix
+  Sys.sleep(0.1) 
+  mat=temp # sobreescribe la matriz en la terminal de plot 
   # Guarda el conteo de sin capsula, cap1, cap2 y muertos
   n_SinCapsula[k]=kH
   n_Capsula1[k]=kI
