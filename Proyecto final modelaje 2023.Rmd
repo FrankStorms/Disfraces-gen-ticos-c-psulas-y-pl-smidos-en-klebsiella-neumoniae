@@ -26,11 +26,9 @@ La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula
 
 
 #### Descripción del problema:
+Modelar la interacción plásmido-cápsula que se da durante los procesos de fagocitosis.
 
-Modelar la adquisición de capsulas mediantes plasmidos con comportamiento parasitico en klebsiella como un posible mecanismo contra fagos.
-
-Modelo matemático de fagos y capsulas (Suceptible a ajustes)
-
+Modelo matemático
 $$
 \begin{aligned}
 \dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2+ \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho \\
@@ -39,7 +37,7 @@ $$
 \end{aligned}
 $$
 
-Codigo
+Código
 
 ```{r}
 library(deSolve)
@@ -63,7 +61,7 @@ tiempo <- seq(0, 20, by = 0.001)
 out <- ode(condiciones_iniciales, tiempo, SIRC, pars) 
 ```
 
-Grafica... aún falta ajustar los parametros al modelo pero ya responde
+Gráfica
 
 ```{r}
 matplot(out[ , 1], out[ , 2:3], type = "l", xlab = "tiempo", ylab = "Población",
@@ -87,3 +85,8 @@ Conclusión
 
 
 Referencias
+Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211.
+Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba.
+Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852.
+McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832.
+Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65–85.
