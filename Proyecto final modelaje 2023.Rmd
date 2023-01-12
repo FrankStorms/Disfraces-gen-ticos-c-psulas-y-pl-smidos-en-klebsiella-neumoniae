@@ -5,31 +5,25 @@ date: "2023-01-10"
 output: html_document
 ---
 
-
-
 # La Interacción Cápsula-Plásmido
+
 # Disfraces Genéticos: Cápsulas-Plásmidos.
 
-¿Qué son los plásmidos?
-Los plásmidos son material genético autónomo de tamaño variable que aprovechan la maquinaria de replicación de un hospedero (bacterias y/o arqueas) para replicarse  y que se transfieren de forma horizontal entre células (Attéré et al., 2017). 
+¿Qué son los plásmidos? Los plásmidos son material genético autónomo de tamaño variable que aprovechan la maquinaria de replicación de un hospedero (bacterias y/o arqueas) para replicarse y que se transfieren de forma horizontal entre células (Attéré et al., 2017).
 
-¿Cómo se adquieren los plásmidos?
-De acuerdo con Boto en 2019, pueden ser adquiridos a través de 2 vías:
-Conjugación: Donde existe un intercambio directo de plásmidos entre células. 
-Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células.
+¿Cómo se adquieren los plásmidos? De acuerdo con Boto en 2019, pueden ser adquiridos a través de 2 vías: Conjugación: Donde existe un intercambio directo de plásmidos entre células. Transformación: Donde los plásmidos se encuentran de forma libre e infectan a las células.
 
-Los plásmidos juegan un papel muy importante dentro de la diseminación de genes de resistencia, ya que se transmiten de forma horizontal entre arqueas y bacterias. Se estima que el 80% de los genes de resistencia a antibióticos que posee Salmonella enterica pertenecen a plásmidos (McMillan et al., 2019). 
+Los plásmidos juegan un papel muy importante dentro de la diseminación de genes de resistencia, ya que se transmiten de forma horizontal entre arqueas y bacterias. Se estima que el 80% de los genes de resistencia a antibióticos que posee Salmonella enterica pertenecen a plásmidos (McMillan et al., 2019).
 
-Otra característica otorgada por los plásmidos son las cápsulas bacterianas, estructuras que protegen a las células de ambientes y situaciones hostiles, como la infección por bacteriófagos, la desecación o la exposición  ambientes tóxicos (Moxon & Kroll, 1990; Lopez et al., 2021).
+Otra característica otorgada por los plásmidos son las cápsulas bacterianas, estructuras que protegen a las células de ambientes y situaciones hostiles, como la infección por bacteriófagos, la desecación o la exposición ambientes tóxicos (Moxon & Kroll, 1990; Lopez et al., 2021).
 
-La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula al estar en presencia de fagos pierden la cápsula para evitar ser depredados, ya que éstos se ven atraídos por los plásmidos. A partir de este descubrimiento, se propuso la hipótesis que señala que las células pueden perder y volver a adquirir las cápsulas a través de la entrada y salida de los plásmidos de la célula para evitar ser depredados (Lopez et al., 2021). 
-
+La interacción cápsula-fago es muy compleja, ya que las bacterias con cápsula al estar en presencia de fagos pierden la cápsula para evitar ser depredados, ya que éstos se ven atraídos por los plásmidos. A partir de este descubrimiento, se propuso la hipótesis que señala que las células pueden perder y volver a adquirir las cápsulas a través de la entrada y salida de los plásmidos de la célula para evitar ser depredados (Lopez et al., 2021).
 
 #### Descripción del problema:
+
 Modelar la interacción plásmido-cápsula que se da durante los procesos de fagocitosis.
 
-Modelo matemático
-$$
+Modelo matemático $$
 \begin{aligned}
 \dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2+ \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho \\
 \dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 \\
@@ -71,22 +65,8 @@ legend("topright", c("Sin capsula", "Capsula 1", "Cpasula 2"), col = 1:3,lty=1:3
 
 Resultados
 
+Discusión 1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias. 2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente". 4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula. 6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
 
-Discusión
-1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias.
-2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 
-3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente".
-4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 
-5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula.
-6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
+Conclusión
 
-
-Conclusión 
-
-
-Referencias
-Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211.
-Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba.
-Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852.
-McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832.
-Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65–85.
+Referencias Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211. Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba. Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852. McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832. Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65--85.
