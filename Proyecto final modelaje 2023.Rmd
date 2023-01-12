@@ -25,9 +25,9 @@ Modelar la interacción plásmido-cápsula que se da durante los procesos de fag
 
 Modelo matemático $$
 \begin{aligned}
-\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2+ \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho \\
-\dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 \\
-\dot{d3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2
+\dot{d1} &=& \alpha C \rho-\gamma \rho \rho1 - \gamma \rho \rho 2 + \rho e (1-\delta) \alpha C \rho 1 + \rho e ((1-\delta)- \sigma)\alpha C \rho 2 - \delta 1 \rho \\
+\dot{d2} &=& (1-\delta)\alpha C \rho 1+ \gamma \rho \rho1 - \rho e (1-\delta) \alpha C \rho 1 - \delta 1 \rho 1 -  \lamda  \rho1\\ 
+\dot{d3} &=& ((1- \delta)-\sigma)\alpha C \rho 2 + \gamma \rho \rho 2 - \rho e ((1-\delta)- \sigma)\alpha C \rho 2 -\delta 1 \rho 2 -  \lamda  \rho2
 \end{aligned}
 $$
 
@@ -40,16 +40,16 @@ CAPsulas <- function(t, state, parameters) {
     
     # Acá van definidas las ecuaciones
     
-    d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 - delta1*rho
-    d2 <- (1-delta)*alpha*C*rho1 + gama*rho*rho1 - rhoe*(1-delta)*alpha*C*rho1 - delta1*rho1
-    d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2
+    d1 <- alpha*C*rho - gama*rho*rho1 - gama*rho*rho2 + rhoe*(1-delta)*alpha*C*rho1 +  rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho
+    d2 <- (1-delta)*alpha*C*rho1 + gama*rho*rho1 - rhoe*(1-delta)*alpha*C*rho1 - delta1*rho1 - lamda*rho1
+    d3 <- ((1-delta)-sigam)*alpha*C*rho2 + gama*rho*rho2 - rhoe*((1-delta)-sigam)*alpha*C*rho2 - delta1*rho2 - lamda*rho2
   
     list(c(d1, d2, d3))
   })
 }
 
 pars <- c(alpha= 0.22 , gama = 0.2 , S= .2, rhoe = .21, delta = .3 , 
-          delta1 = .31, C = 10, sigam =.3)  
+          delta1 = .31, C = 10, sigam =.3, lamda=.06)  
 condiciones_iniciales <- c(rho =100, rho1= 100 , rho2= 100)
 tiempo <- seq(0, 20, by = 0.001)
 out <- ode(condiciones_iniciales, tiempo, SIRC, pars) 
@@ -68,5 +68,12 @@ Resultados
 Discusión 1.- Por la alta especificidad de los fagos, los fagos solo interactúan con las bacterias con un mismo tipo de cápsula. No interactúan con ningún otro tipo de bacterias. 2.- Algunas bacterias pierden su cápsula. Se sospecha que es para evitar ser infectadas. 3.- Las bacterias sin cápsula son más susceptibles a aceptar plásmidos conjugativos que los encapsulados. Obtienen una cápsula "rápidamente". 4.- Loci capsulares pueden codificarse en plásmidos. La información genética se hace plásmido y se comparte. 5.- Los fagos intercambian plásmidos entre bacterias con la misma cápsula. 6.- La cantidad de ADN nuevo transducido por los fagos decaerá con el tiempo.
 
 Conclusión
+Con este modelo podemos representar con mayor precisión las dinámicas ecológicas entre bacterias, plásmidos y fagos.  Así como arrojarnos más luz en la aplicación clinica, como en el comportamiento de enfermedades bacterias y para la aplicación de fagos como un potencial tratamiento ante la inminente multirresistencia bacteriana.
 
-Referencias Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211. Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba. Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852. McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832. Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65--85.
+Referencias 
+Attéré, S. A., Vincent, A. T., Paccaud, M., Frenette, M., & Charette, S. J. (2017). The role for the small cryptic plasmids as moldable vectors for genetic innovation in Aeromonas salmonicida subsp. salmonicida. Frontiers in genetics, 8, 211. 
+Boto, L., & Pineda, R. (2019). Transferencia horizontal de genes: Implicaciones evolutivas y fisiológicas. Universidad de Córdoba. 
+Lopez, J. G., Donia, M. S., & Wingreen, N. S. (2021). Modeling the ecology of parasitic plasmids. The ISME journal, 15(10), 2843-2852. 
+McMillan, E. A., Gupta, S. K., Williams, L. E., Jové, T., Hiott, L. M., Woodley, T. A., ... & Frye, J. G. (2019). Antimicrobial resistance genes, cassettes, and plasmids present in Salmonella enterica associated with United States food animals. Frontiers in microbiology, 10, 832. 
+Moxon ER, Kroll JS. El papel de las cápsulas de polisacáridos bacterianos como factores de virulencia . En: Jann K, Jann B, editores. Cápsulas bacterianas. Berlín, Heidelberg: Springer Berlín Heidelberg; 1990. págs. 65--85.
+Sousa J. A. M., Buffet A., Haudiquet M., Rocha E. P. C.,  Rendueles O. (2020). Modular prophage interactions driven by capsule serotype select for capsule loss under phage predation. ISME J.  14(12): 2980–2996
