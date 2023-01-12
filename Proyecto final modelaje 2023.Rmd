@@ -1,6 +1,6 @@
 ---
 title: "Plasmidos proyecto final"
-author: "Pedro, Frank y Samuel"
+author: "Barrón Uribe Pedro Jesús, Juárez Luna Jonathan Samuel, Pérez Storms Francisco Alfonso"
 date: "2023-01-10"
 output: html_document
 ---
